@@ -1,14 +1,44 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-    <script src="./libs/supervisor.js"></script>
+<!DOCTYPE html encoding=UTF-8>
+<html lang="en">
+  <head>
     <style>
       * {padding: 0; margin: 0}
       h1 {margin-left: 20px;}
       #idk {margin-left: 10px;}
     </style>
-	</head>
-	<body>
+
+    <script src="./vendor/supervisor.js"></script>
+    <script type="module">
+      import { h, text, app } from "https://unpkg.com/hyperapp"
+
+      const AddTodo = (state) => ({
+        ...state,
+        value: "",
+        todos: state.todos.concat(state.value),
+      })
+
+      const NewValue = (state, event) => ({
+        ...state,
+        value: event.target.value,
+      })
+
+      app({
+        init: { todos: [], value: "" },
+        view: ({ todos, value }) =>
+          h("main", {}, [
+            h("h1", {}, text("To do list")),
+            h("input", { type: "text", oninput: NewValue, value }),
+            h("ul", {},
+              todos.map((todo) => h("li", {}, text(todo)))
+            ),
+            h("button", { onclick: AddTodo }, text("New!")),
+          ]),
+        node: document.getElementById("app"),
+      })
+    </script>
+  </head>
+  <body>
+    <main id="app"></main>
     <div id="pbody">
       <h1>Demo test with proctoring</h1>
       <hr>
@@ -48,6 +78,5 @@
       // supervisor.stop();
       */
     </script>
-	</body>
+  </body>
 </html>
-
