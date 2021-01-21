@@ -5,7 +5,7 @@
 - server (main - custom - mine)
     - serve static pages
         - SPA
-            ? cookies
+            - ? cookies
             - welcome
             - pre test init
                 - on success
@@ -17,10 +17,10 @@
                 - gather, display Proc results
                     - ~redux to API for results, update on change (no refresh)
     - authorize for proc jwt
-        ? user id
+        - ? user id
     - rest api for Proc
-        ? routes
-            ? data
+        - ? routes
+            - ? data
     - HTTPS 
         - greenlock
         - nodejs greenlock lib
