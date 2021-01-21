@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <script src="./libs/supervisor.js"></script>
+    <style>
+      * {padding: 0; margin: 0}
+      h1 {margin-left: 20px;}
+      #idk {margin-left: 10px;}
+    </style>
+	</head>
+	<body>
+    <div id="pbody">
+      <h1>Demo test with proctoring</h1>
+      <hr>
+      <div id="idk">
+        <p>
+          <h4>Welcome</h4>
+          <span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+        </p>
+      </div>
+    </div>
+    <script>
+      /*
+      // create Supervisor instance
+      var supervisor = new Supervisor({ url: 'https://demo.proctoring.online' });
+      // log in and initialize the session
+      supervisor
+        .init({
+          // set your provider name
+          provider: 'jwt',
+          // get JWT string from your server
+          token: fetch('/api/token').then(function(response) {
+            if (response.ok) return response.text();
+            else throw Error('Failed to get JWT');
+          })
+        })
+        .then(function() {
+          // start the session only after initialization
+          return supervisor.start();
+        })
+        .catch(function(err) {
+          // show alert with an error
+          alert(err.toString());
+          // redirect to home page
+          location.href = '/';
+        });
+      // stop the session after testing in e-learning system is over
+      // supervisor.stop();
+      */
+    </script>
+	</body>
+</html>
+
