@@ -1,3 +1,5 @@
+#!/bin/sh
+echo "\n====================| CD to working dir |====================\n";
 echo "\n====================| Prepare    certbot|====================\n";
 sudo snap install core; sudo snap refresh core;
 sudo apt-get remove certbot;
