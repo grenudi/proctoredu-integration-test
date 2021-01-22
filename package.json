@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./src/server.js",
     "dev": "nodemon ./src/server.js",
-    "certify": "cd src/https; node ./server-acme.js & sh ./certify.sh",
+    "certify": "cd src/https; sh ./certify.sh",
     "acme": "node ./src/https/server-acme.js"
   },
   "repository": {
