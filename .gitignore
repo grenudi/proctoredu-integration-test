@@ -1,9 +1,6 @@
 #CUSTOM
 notes.txt
-src/https/certbot.d/*/*
-!/src/https/certbot.d/config/
-!/src/https/certbot.d/logs/
-!/src/https/certbot.d/work/
+src/https/certbot.d/*
 src/https/acme.d/.well-known/acme-challenge/*
 !src/https/acme.d/.well-known/acme-challenge/.ignorethis
 
