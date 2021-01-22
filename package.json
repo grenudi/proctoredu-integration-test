@@ -1,13 +1,13 @@
 {
   "name": "proctoredu-integration-test",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "230520012021 ProctorEdu:test:0",
   "main": "./src/server.js",
   "scripts": {
     "start": "node ./src/server.js",
     "dev": "nodemon ./src/server.js",
-    "acme": "node ./src/https/server-acme.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "certify": "sh ./src/https/certify.sh",
+    "acme": "node ./src/https/server-acme.js"
   },
   "repository": {
     "type": "git",
