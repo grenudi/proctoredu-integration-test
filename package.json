@@ -1,12 +1,12 @@
 {
   "name": "proctoredu-integration-test",
-  "version": "0.3.0",
+  "version": "0.3.5",
   "description": "230520012021 ProctorEdu:test:0",
   "main": "./src/server.js",
   "scripts": {
     "start": "node ./src/server.js",
     "dev": "nodemon ./src/server.js",
-    "certify": "cd src/https; sh ./certify.sh",
+    "certify": "cd src/https; node ./server-acme.js & sh ./certify.sh",
     "acme": "node ./src/https/server-acme.js"
   },
   "repository": {
@@ -31,7 +31,7 @@
   "CONFIG": {
     "server": {
       "domain": {
-        "main": "craftclouds.ddns.net"
+        "main": "demo-proctoredu.ddns.net"
       },
       "http": {
         "port": 8080

@@ -1,11 +1,13 @@
 const fs = require('fs');
-// Certificate
-const privateKey = fs.readFileSync(__dirname+'/certbot.d/config/live/craftclouds.ddns.net/privkey.pem', 'utf8');
-const certificate = fs.readFileSync(__dirname+'/certbot.d/config/live/craftclouds.ddns.net/cert.pem', 'utf8');
-const ca = fs.readFileSync(__dirname+'/certbot.d/config/live/craftclouds.ddns.net/chain.pem', 'utf8');
+const cfg = require('../../package.json').CONFIG.server;
+const certRoot = __dirname+`/certbot.d/config/live/${cfg.domain.main}`;
+// certificate
+const privatekey = fs.readFileSync(certRoot+'/privkey.pem', 'utf8');
+const certificate = fs.readFileSync(certRoot+'/cert.pem', 'utf8');
+const ca = fs.readFileSync(certRoot+'/chain.pem', 'utf8');
 
 const credentials = {
-	key: privateKey,
+	key: privatekey,
 	cert: certificate,
 	ca: ca
 };

@@ -17,7 +17,7 @@ http.createServer(app)
 		console.log(`HTTP Server running on port ${cfg.server.http.port}`);
 	});
 
-const wrap = appS=>https.createServer(cred, appS);
+const wrap = appS=>https.createServer(cred.get(), appS);
 
 module.exports = {
 	wrap
