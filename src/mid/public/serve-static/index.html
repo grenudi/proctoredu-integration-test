@@ -1,7 +1,7 @@
 <!DOCTYPE html encoding=UTF-8>
 <html lang="en">
   <head>
-    <style>
+  <style>
       * {padding: 0; margin: 0}
       h1 {margin-left: 20px;}
       #idk {margin-left: 10px;}
@@ -50,9 +50,10 @@
       </div>
     </div>
     <script>
-      /*
       // create Supervisor instance
-      var supervisor = new Supervisor({ url: 'https://demo.proctoring.online' });
+      const demourl = "https://demo.proctoring.online";
+      const mirrorurl = `https://${window.location.host}`;
+      var supervisor = new Supervisor({ url: demourl });
       // log in and initialize the session
       supervisor
         .init({
@@ -76,7 +77,6 @@
         });
       // stop the session after testing in e-learning system is over
       // supervisor.stop();
-      */
     </script>
   </body>
 </html>

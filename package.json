@@ -26,7 +26,10 @@
   },
   "homepage": "https://github.com/grenudi/proctoredu-integration-test#readme",
   "dependencies": {
-    "express": "4.17.1"
+    "cookie-parser": "^1.4.5",
+    "express": "4.17.1",
+    "jsonwebtoken": "8.5.1",
+    "jwt-simple": "^0.5.6"
   },
   "CONFIG": {
     "server": {

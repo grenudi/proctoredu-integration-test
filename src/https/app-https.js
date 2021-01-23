@@ -8,7 +8,7 @@ const cred = require("./credentials.js");
 
 const app = Express();
 app.use((req,res)=>{
-    res.set('location', `https://${cfg.server.domain.main}`);
+    res.set('location', `https://${req.get('host')}`);
     res.status(308).send();
 })
 

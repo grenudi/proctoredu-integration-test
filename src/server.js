@@ -1,15 +1,21 @@
 "use strict";
 // Dependencies
 const Express = require("express");
-const cfg = require("../package.json").CONFIG;
-const appHTTPS = require("./https/app-https");
 const app = Express();
 
-app.use((req, res) => {
-	res.send('Hello there !');
-});
+const cfg = require("../package.json").CONFIG;
+const https = require("./https/app-https");
 
-appHTTPS.wrap(app)
+const publica = require("./mid/public/public.js");
+const imitateClient = require("./mid/mock/auth-client.js");
+const privata = require("./mid/private/private.js");
+
+app
+.use(publica)
+.use(imitateClient)//authwall can be used here
+.use(privata);
+
+https.wrap(app)
         .listen(cfg.server.https.port, () => {
             console.log(`HTTPS Server running on port ${cfg.server.https.port}`);
         });

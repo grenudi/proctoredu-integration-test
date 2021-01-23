@@ -12,8 +12,8 @@ change ```CONFIG.server.domain.main``` in ```package.json``` to match yours
 ```
 npm run certify;
 ```
-**interactive**! do whatever the certbot tells you to do, and check the link!  
 run while "npm run certify" is not yet at interactive stage: ```npm run acme```  
+**interactive**! do whatever the certbot tells you to do, and check the link!  
 stop "npm run acme"  
 ```
 npm run start
@@ -43,8 +43,9 @@ don't forget to forward them if neccessary
         - ? routes
             - ? data
     - HTTPS 
-        - greenlock
-        - nodejs greenlock lib
+        - snap certbot
+        - ~acme.sh
+          - server-acme.js(port 80);
 
 
 
