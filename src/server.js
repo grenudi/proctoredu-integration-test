@@ -11,10 +11,10 @@ const publica = require("./mid/public/public.js");
 const imitateClient = require("./mid/mock/auth-client.js");
 const privata = require("./mid/private/private.js");
 
-
+pdb.set("proctorSecret","secret");
 app
-.get("/secretFromProctorEdu?:secret",(req,res)=>{
-    pdb.set("proctorSecret", req.query.secret);
+.get("/secretFromProctorEdu/:secret",(req,res)=>{
+    pdb.set("proctorSecret", req.params.secret);
     res.send(`got the code: ${pdb.get("proctorSecret")}`);
 })
 .use(publica)
