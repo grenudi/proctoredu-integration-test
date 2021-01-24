@@ -45,6 +45,12 @@
     },
     "serverACME": {
       "port": 8080
+    },
+    "serverProc": {
+      "domains": [
+        "demo.proctoring.online"
+      ],
+      "badPlaceForSecrets": "secret"
     }
   }
 }
