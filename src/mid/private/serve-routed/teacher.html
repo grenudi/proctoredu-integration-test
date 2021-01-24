@@ -1,3 +1,4 @@
+
 <!DOCTYPE html encoding=UTF-8>
 <html lang="en">
   <head>
@@ -80,7 +81,7 @@
     <script>
       const examid = window.location.href.match(/[^\/]+$/)[0];
       const fetprores = async (data)=>{
-        return await fetch(`https://${window.location.hostname}/results/${examid}`, {
+        return await fetch(`https://${window.location.hostname}/teacher/${examid}`, {
           method: 'POST', // *GET, POST, PUT, DELETE, etc.
           cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
           headers: {
