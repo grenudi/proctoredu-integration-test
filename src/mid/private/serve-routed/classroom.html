@@ -1,0 +1,85 @@
+<!DOCTYPE html encoding=UTF-8>
+<html lang="en">
+  <head>
+      <title>Hard Test</title>
+  <style>
+    * {padding: 0; margin: 0}
+    h1 {margin-left: 20px;}
+    .question{
+      margin: 10px;
+    }
+    .answer{
+      border: solid 1px #333;
+    }
+    #pbody{
+      margin-left: 5%;
+      width: 90%;
+    }
+    #idk {
+      margin: 10px;
+    }
+    #button-top-down-bend {
+      transition: all 0.2s 0.2s;
+      border-bottom: solid 1px #999999;
+      -webkit-transform: perspective(0px) rotateX(0deg); 
+
+    }
+    #button-top-down-bend:hover{
+      -webkit-transform: perspective(30cm) rotateX(-8deg) translateZ(-4px) translateY(-0px);
+      box-shadow: inset 0px 60px 10px -10px #eee;
+    }
+    .shadow2 {
+      box-shadow: inset 0px 10px 3px -6px #555,
+                  inset 0px 40px 20px -10px #eee;
+    }
+    .shadow-top-0 {
+      box-shadow: inset 0px 10px 3px -6px #555;
+    }
+    .centered{
+      margin: auto;
+      width: 50%;
+      text-align: center;
+      padding: 10px;
+    }
+    #button-top-down-bend a:link{
+      text-decoration: none;
+      color: #222;
+    }
+  </style>
+  </head>
+  <body>
+    <div id="pbody">
+      <div class="">
+        <div class="centered">
+          <h2>Demo test with proctoring</h2>
+        </div>
+      </div>
+      <hr>
+      <div class="question">
+        <span>Please select an option:</span>
+      </div>
+      <div class="answer">
+        <form action="/results">
+          <input type="radio" id="op1" value="1">
+          <label for="1">Option 1</label><br>
+          <input type="radio" id="op2" value="2">
+          <label for="2">Option 2</label><br>
+          <input type="radio" id="op3" value="3">
+          <label for="3">Option 3</label>
+          <br>
+          <input type="radio" id="op4" value="4">
+          <label for="4">Option 4</label>
+        </form>
+      </div>
+      <div id="button-top-down-bend">
+            <a href="/results">
+        <div class="shadow2">
+          <div class="centered">
+              <h2>FINISH</h2>
+          </div>
+        </div>
+            </a>
+      </div>
+    </div>
+  </body>
+</html>

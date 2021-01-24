@@ -7,14 +7,14 @@ app
 })
 .get("/classroom",(req,res)=>{
     //form examid
-    res.send("AWESOME");
+    res.sendFile(__dirname+"/serve-routed/classroom.html");
 })
 .get("/results:?examid",(req,res)=>{
-    //form examid
     res.send("AWESOME");
 })
 .get("/results",(req,res)=>{
-    res.send("AWESOME");
+    //form examid
+    res.sendFile(__dirname+"/serve-routed/results.html");
 });
 
 module.exports = app;

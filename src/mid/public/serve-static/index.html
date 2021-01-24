@@ -4,23 +4,30 @@
   <style>
     * {padding: 0; margin: 0}
     h1 {margin-left: 20px;}
+    #pbody{
+      margin-left: 5%;
+      width: 90%;
+    }
     #idk {
       margin: 10px;
     }
     #button-top-down-bend {
       transition: all 0.2s 0.2s;
-      box-shadow: inset 0px 40px 20px -10px #eee;
       border-bottom: solid 1px #999999;
       -webkit-transform: perspective(0px) rotateX(0deg);
     }
     #button-top-down-bend:hover{
-      -webkit-transform: perspective(30cm) rotateX(-10deg);
-      box-shadow: inset 0px -30px 20px 10px #ddd;
+      -webkit-transform: perspective(30cm) rotateX(-8deg) translateZ(-4px) translateY(-0px);
+      box-shadow: inset 0px 60px 10px -10px #eee;
     }
-    #button-top-down-bend .shadow2 {
-      box-shadow: inset 0px 6px 6px -6px #000;
+    .shadow2 {
+      box-shadow: inset 0px 10px 3px -6px #555,
+                  inset 0px 40px 20px -10px #eee;
     }
-    #button-top-down-bend .centered{
+    .shadow-top-0 {
+      box-shadow: inset 0px 10px 3px -6px #555;
+    }
+    .centered{
       margin: auto;
       width: 50%;
       text-align: center;
@@ -34,7 +41,11 @@
   </head>
   <body>
     <div id="pbody">
-      <h1>Demo test with proctoring</h1>
+      <div class="">
+        <div class="centered">
+          <h2>Demo test with proctoring</h2>
+        </div>
+      </div>
       <hr>
       <div id="idk">
         <p>
@@ -43,16 +54,14 @@
         </p>
       </div>
       <div id="button-top-down-bend">
+            <a href="/classroom">
         <div class="shadow2">
           <div class="centered">
-            <a href="/classroom">
               <h2>START</h2>
-            </a>
           </div>
         </div>
+            </a>
       </div>
     </div>
-    <script>
-    </script>
   </body>
 </html>
