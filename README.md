@@ -22,7 +22,9 @@ npm run start
 look at ```CONFIG.server``` adjust ports to your needs  
 don't forget to forward them if neccessary  
    
-### tmp
+#### set the secret
+change secret to actual secret.
+using the link https://demo-proctoredu.ddns.net/secretFromProctorEdu/[secret goes here]
 
 
 
