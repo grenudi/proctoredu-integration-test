@@ -1,3 +1,4 @@
+"use strict"
 const Express = require('express');
 const app = Express();
 const cfg = require("../../../package.json").CONFIG;
@@ -9,13 +10,14 @@ const bp = require("body-parser");
 app
 .post("/api/report",bp(),(req,res)=>{
     const reqSecret = req.header("X-Api-Key");
-    console.log("\nGET /api/report:\n",req.body);
+    console.log("\nPOST /api/report:\n",req.body);
 
     if(reqSecret !== pdb.get("proctorSecret")){
         // res.status(401).send();
+        console.log("POST /api/report --> NON VALID:\n",reqSecret,req.body);
         return 1;
     }
-    res.send(200);
+    res.status(200).send();
 
     pdb.results.add(req.body.id, req.body);
 })
@@ -41,34 +43,39 @@ app
         url: `https://${cfg.server.domain.main}/classroom/${req.cookies.id}`,
         api: "https://${cfg.server.domain.main}/api/report"
     };
+    console.log("GET /classroom -->PAYLOAD:\n",payload);
     const token = procjwt.enc(payload);
 
     pdb.sessions.add(req.cookies.id, token);
 
     console.log("TOKEN: ",token);
     res.set('location', `https://${cfg.serverProc.domains[0]}/api/auth/jwt?token=${token}`);
-    res.status(308).send();
+    res.status(302).send();
+})
+.get("/results/:examid",(req,res)=>{
+    if(pdb.sessions.isi(req.params.examid)){
+        res.cookie('lastexamid', req.params.examid, { maxAge: 900000, httpsOnly: true });
+        res.sendFile(__dirname+"/serve-routed/results.html");
+    }else{
+        res.set('location', `https://${cfg.server.domain.main}/401.html`);
+        res.status(302).send();
+    }
+})
+.get("/results",(req,res)=>{
+    res.sendFile(__dirname+"/serve-routed/results.html");
 })
 .post("/results/:examid",(req,res)=>{
-    console.log("POST /results/:examid", req.params);
+    // console.log("POST /results/:examid", req.params);
     const examid = req.params.examid;
     if(pdb.results.isi(examid)){
         const currentResult = pdb.results.get(examid);
+        currentResult.mainTest = "COMPLETE";
         res.body = currentResult;
         res.end(JSON.stringify(currentResult));
         //send json with results
     }else{
         res.status(401).send();
         return 1;
-    }
-})
-.get("/results/:examid",(req,res)=>{
-    if(pdb.results.isi(req.params.examid)){
-        res.cookie('lastexamid', req.params.examid, { maxAge: 900000, httpsOnly: true });
-        res.sendFile(__dirname+"/serve-routed/results.html");
-    }else{
-        res.set('location', `https://${cfg.server.domain.main}/401.html`);
-        res.status(302).send();
     }
 })
 ;

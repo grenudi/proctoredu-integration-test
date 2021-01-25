@@ -10,6 +10,7 @@ app
         "tags": ["demo","proctorEdu","grenudi","idunerg"]
     }
     const examid = new Date().getTime();
+    // console.log("USE MOCK --> set id to:", examid);
     req.cookies.exp = Math.round(new Date().getTime()/1000 + 3600);
     req.cookies.id = examid;
     req.cookies.role = "student"
