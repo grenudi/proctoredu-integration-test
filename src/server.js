@@ -1,5 +1,4 @@
 "use strict";
-// Dependencies
 const Express = require("express");
 const app = Express();
 
@@ -11,11 +10,11 @@ const publica = require("./mid/public/public.js");
 const imitateClient = require("./mid/mock/auth-client.js");
 const privata = require("./mid/private/private.js");
 
-pdb.set("proctorSecret","secret");
+pdb.set("proctorSecret","real secret");
 app
 .get("/secretFromProctorEdu/:secret",(req,res)=>{
     pdb.set("proctorSecret", req.params.secret);
-    res.send(`got the code: ${pdb.get("proctorSecret")}`);
+    res.send(`got the secret: ${pdb.get("proctorSecret")}`);
 })
 .use(publica)
 .use(imitateClient)//authwall can be used here
