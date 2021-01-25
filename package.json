@@ -1,6 +1,6 @@
 {
   "name": "proctoredu-integration-test",
-  "version": "0.8.0",
+  "version": "0.8.9",
   "description": "230520012021 ProctorEdu:test:0",
   "main": "./src/server.js",
   "scripts": {
