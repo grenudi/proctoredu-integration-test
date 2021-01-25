@@ -2,6 +2,8 @@
 230520012021 ProctorEdu:test:0  
   
 ## USAGE
+
+[video demo](https://drive.google.com/file/d/1K8wL7GS9ovVNWFqeE3RGC25uUqprtDRw/view?usp=sharing "proctoring demo video")
 ```
 git clone https://github.com/grenudi/proctoredu-integration-test;
 cd proctoredu-integration-test;
