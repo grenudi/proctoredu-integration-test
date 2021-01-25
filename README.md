@@ -24,7 +24,7 @@ don't forget to forward them if neccessary
    
 #### set the secret
 change secret to actual secret.
-using the link https://demo-proctoredu.ddns.net/secretFromProctorEdu/[secret goes here]
+using the link https://[your domain]/secretFromProctorEdu/[secret goes here]
 
 
 
