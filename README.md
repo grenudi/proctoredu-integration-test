@@ -3,7 +3,9 @@
   
 ## USAGE
 
-[video demo](https://drive.google.com/file/d/1K8wL7GS9ovVNWFqeE3RGC25uUqprtDRw/view?usp=sharing "proctoring demo video")
+[video demo](https://drive.google.com/file/d/1K8wL7GS9ovVNWFqeE3RGC25uUqprtDRw/view?usp=sharing "proctoring demo video")  
+
+[example demo](https://demo-proctoring.ddns.net/ "live demo website")
 ```
 git clone https://github.com/grenudi/proctoredu-integration-test;
 cd proctoredu-integration-test;
